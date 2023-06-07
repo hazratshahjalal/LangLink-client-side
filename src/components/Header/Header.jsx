@@ -5,10 +5,9 @@ const Header = () => {
   return (
     <header className="bg-gray-800 text-white">
       <nav className="container mx-auto flex items-center justify-between py-4">
-        <div className="flex items-center">
+        <div className="flex w-20 items-center">
           {/* Website Logo */}
-          <img className="h-8 mr-4" src={logo} alt="Logo" />
-          <h1 className="text-xl font-bold">Your Website</h1>
+          <img className=" mr-4" src={logo} alt="Logo" />
         </div>
 
         <div className="flex items-center">
