@@ -30,12 +30,12 @@ const Header = () => {
 
           {/* Login and Registration Buttons */}
           <div className="ml-4">
-            <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">
+            <Link to="/login"><button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">
               Login
-            </button>
-            <button className="bg-gray-500 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded ml-2">
+            </button></Link>
+            <Link to="/registraion" ><button className="bg-gray-500 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded ml-2">
               Register
-            </button>
+            </button></Link>
           </div>
         </div>
       </nav>
