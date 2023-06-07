@@ -1,9 +1,10 @@
 import React from 'react';
 import logo from '../../../src/assets/LangLogo.png'
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <header className="bg-gray-800 text-white">
+    <header className="bg-emerald-100 text-gray-800">
       <nav className="container mx-auto flex items-center justify-between py-4">
         <div className="flex w-20 items-center">
           {/* Website Logo */}
@@ -12,18 +13,18 @@ const Header = () => {
 
         <div className="flex items-center">
           {/* Navbar Items */}
-          <ul className="flex space-x-4">
+          <ul className="flex space-x-4 font-semibold hover:font-lg ">
             <li>
-              <a href="#" className="hover:text-gray-300">Home</a>
+              <Link href="/" className="hover:text-gray-400">Home</Link>
             </li>
             <li>
-              <a href="#" className="hover:text-gray-300">About</a>
+              <a href="#" className="hover:text-gray-400">About</a>
             </li>
             <li>
-              <a href="#" className="hover:text-gray-300">Services</a>
+              <a href="#" className="hover:text-gray-400">Services</a>
             </li>
             <li>
-              <a href="#" className="hover:text-gray-300">Contact</a>
+              <a href="#" className="hover:text-gray-400">Contact</a>
             </li>
           </ul>
 
