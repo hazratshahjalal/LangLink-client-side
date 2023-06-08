@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, redirect, useLocation, useNavigate } from 'react-router-dom';
 import SocialLogin from '../shared/socialLogin/SocialLogin';
@@ -7,7 +7,23 @@ import { AuthContext } from '../../Providers/AuthProvider';
 import Swal from 'sweetalert2'
 
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+
 const Login = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 500,
+      easing: 'ease-out',
+      once: true,
+    });
+
+    return () => {
+      AOS.refresh(); // Refresh AOS when the component unmounts
+    };
+  }, []);
+
   const { register, handleSubmit, getValues } = useForm();
 
   const [showPassword, setShowPassword] = useState(false);
@@ -176,7 +192,7 @@ const Login = () => {
           <div className="mt-4">
             <button
               type="submit"
-              className="w-full px-4 py-2 text-base font-semibold text-white transition-colors duration-200 bg-blue-600 rounded-md shadow hover:bg-blue-700 focus:outline-none focus:ring-blue-500 focus:ring-offset-blue-200 focus:ring-2 sm:px-6"
+              className="w-full px-4 py-2 text-base font-semibold btn-primary text-white transition-colors duration-200 bg-blue-600 rounded-md shadow hover:bg-blue-700 focus:outline-none focus:ring-blue-500 focus:ring-offset-blue-200 focus:ring-2 sm:px-6"
             >
               Login
             </button>
