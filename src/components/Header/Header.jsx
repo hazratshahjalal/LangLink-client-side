@@ -36,28 +36,23 @@ const Header = () => {
                 <li>
                   <Link to='/instructors' className="hover:text-gray-400">Instructors</Link>
                 </li>
-                <li>
-                  <Link to='/contact' className="hover:text-gray-400">Contact</Link>
-                </li>
+
                 {/* conditional items */}
                 <li>
                   <Link to='/instructors' className="hover:text-gray-400">Dashboard</Link>
                 </li>
-                {/* <li>
-              <Link to='/instructors' className="hover:text-gray-400"><img title={user.displayName || ''} src={user.photoURL} alt="User Avatar" />
-              </Link>
-            </li> */}
+
               </ul>
 
 
-              {/* Login and Registration Buttons */}
+              {/* Log out  */}
               <div className="ml-4 flex">
                 <label className="btn btn-ghost btn-circle avatar">
                   <div className="w-10 rounded-full">
                     {user.photoURL ? (
                       <img title={user.displayName || ''} src={user.photoURL} alt="User Avatar" />
                     ) : (
-                      <div className='bg-gray-200 p-4 text-center rounded-full' >Avater</div>
+                      <div className='bg-gray-200 p-4 text-center rounded-full' >Avatar</div>
                     )}
                   </div>
                 </label>
@@ -79,17 +74,7 @@ const Header = () => {
                 <li>
                   <Link to='/instructors' className="hover:text-gray-400">Instructors</Link>
                 </li>
-                <li>
-                  <Link to='/contact' className="hover:text-gray-400">Contact</Link>
-                </li>
-                {/* conditional items */}
-                <li>
-                  <Link to='/instructors' className="hover:text-gray-400">Dashboard</Link>
-                </li>
-                {/* <li>
-              <Link to='/instructors' className="hover:text-gray-400"><img title={user.displayName || ''} src={user.photoURL} alt="User Avatar" />
-              </Link>
-            </li> */}
+
               </ul>
 
               {/* Login and Registration Buttons */}
@@ -97,9 +82,7 @@ const Header = () => {
                 <Link to="/login"><button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">
                   Login
                 </button></Link>
-                <Link to="/registration" ><button className="bg-gray-500 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded ml-2">
-                  Sign Up
-                </button></Link>
+
               </div>
             </div>
           </>

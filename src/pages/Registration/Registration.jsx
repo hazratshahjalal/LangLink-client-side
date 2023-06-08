@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import SocialLogin from '../shared/socialLogin/SocialLogin';
 import registerImage from '../../../src/assets/registern.jpg'
 import { AuthContext } from '../../Providers/AuthProvider';
+import Swal from 'sweetalert2'
+
 
 const Registration = () => {
   const { register, handleSubmit, getValues, formState: { errors } } = useForm();

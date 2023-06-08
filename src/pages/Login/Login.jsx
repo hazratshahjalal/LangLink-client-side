@@ -1,9 +1,11 @@
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, redirect, useLocation, useNavigate } from 'react-router-dom';
 import SocialLogin from '../shared/socialLogin/SocialLogin';
 import loginImage from '../../../src/assets/loginpage.jpg'
 import { AuthContext } from '../../Providers/AuthProvider';
+import Swal from 'sweetalert2'
+
 
 const Login = () => {
   const { register, handleSubmit, getValues } = useForm();
@@ -15,13 +17,39 @@ const Login = () => {
   };
 
 
-  const { signInUser } = useContext(AuthContext);
+  const [passError, setPassError] = useState('');
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || '/';
+
+
+  const { signIn } = useContext(AuthContext);
 
   const handleLogin = event => {
     const form = event.target;
     const email = getValues('email');
     const password = getValues('password');
     console.log(email, password);
+    signIn(email, password)
+      .then(result => {
+        const user = result.user;
+        setPassError('')
+        console.log(user);
+        Swal.fire({
+          title: 'Login Successful',
+          showClass: {
+            popup: 'animate__animated animate__fadeInDown'
+          },
+          hideClass: {
+            popup: 'animate__animated animate__fadeOutUp'
+          }
+        });
+        navigate(from, { replace: true });
+
+      })
+      .catch(error => {
+        setPassError(error.message)
+      })
   }
 
   const togglePasswordVisibility = () => {
@@ -92,6 +120,7 @@ const Login = () => {
               className="mt-1 border border-lime-800 p-3 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm rounded-md"
               {...register('password', { required: true })}
             />
+
             <span
               className="absolute right-3 top-2/4 transform -translate-y-2/4 cursor-pointer"
               onClick={togglePasswordVisibility}
@@ -134,6 +163,7 @@ const Login = () => {
                 </svg>
               )}
             </span>
+            <p className=" text-red-500">{passError}</p>
 
 
             {/* {errors.password && (
