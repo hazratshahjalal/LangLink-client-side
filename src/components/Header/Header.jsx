@@ -26,6 +26,14 @@ const Header = () => {
             <li>
               <Link to='/contact' className="hover:text-gray-400">Contact</Link>
             </li>
+            {/* conditional items */}
+            <li>
+              <Link to='/instructors' className="hover:text-gray-400">Dashboard</Link>
+            </li>
+            {/* <li>
+              <Link to='/instructors' className="hover:text-gray-400"><img title={user.displayName || ''} src={user.photoURL} alt="User Avatar" />
+              </Link>
+            </li> */}
           </ul>
 
           {/* Login and Registration Buttons */}
@@ -33,8 +41,8 @@ const Header = () => {
             <Link to="/login"><button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">
               Login
             </button></Link>
-            <Link to="/registraion" ><button className="bg-gray-500 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded ml-2">
-              Register
+            <Link to="/registration" ><button className="bg-gray-500 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded ml-2">
+              Sign Up
             </button></Link>
           </div>
         </div>
