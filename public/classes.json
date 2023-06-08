@@ -1,0 +1,94 @@
+{
+  "classes": [
+    {
+      "id": 1,
+      "image": "class1.jpg",
+      "name": "Spanish",
+      "instructorName": "Maria Rodriguez",
+      "numStudents": 15,
+      "availableSeats": 25,
+      "price": "$50"
+    },
+    {
+      "id": 2,
+      "image": "class2.jpg",
+      "name": "French",
+      "instructorName": "Jean-Luc Leblanc",
+      "numStudents": 10,
+      "availableSeats": 20,
+      "price": "$45"
+    },
+    {
+      "id": 3,
+      "image": "class3.jpg",
+      "name": "German",
+      "instructorName": "Hans Schmidt",
+      "numStudents": 8,
+      "availableSeats": 15,
+      "price": "$55"
+    },
+    {
+      "id": 4,
+      "image": "class4.jpg",
+      "name": "Italian",
+      "instructorName": "Giuseppe Rossi",
+      "numStudents": 12,
+      "availableSeats": 18,
+      "price": "$40"
+    },
+    {
+      "id": 5,
+      "image": "class5.jpg",
+      "name": "Japanese",
+      "instructorName": "Akiko Tanaka",
+      "numStudents": 20,
+      "availableSeats": 30,
+      "price": "$60"
+    },
+    {
+      "id": 6,
+      "image": "class6.jpg",
+      "name": "Chinese",
+      "instructorName": "Li Wei",
+      "numStudents": 16,
+      "availableSeats": 22,
+      "price": "$50"
+    },
+    {
+      "id": 7,
+      "image": "class7.jpg",
+      "name": "Russian",
+      "instructorName": "Ivan Petrov",
+      "numStudents": 14,
+      "availableSeats": 25,
+      "price": "$55"
+    },
+    {
+      "id": 8,
+      "image": "class8.jpg",
+      "name": "Arabic",
+      "instructorName": "Ahmed Mahmoud",
+      "numStudents": 18,
+      "availableSeats": 20,
+      "price": "$45"
+    },
+    {
+      "id": 9,
+      "image": "class9.jpg",
+      "name": "Portuguese",
+      "instructorName": "Carlos Silva",
+      "numStudents": 10,
+      "availableSeats": 15,
+      "price": "$40"
+    },
+    {
+      "id": 10,
+      "image": "class10.jpg",
+      "name": "Korean",
+      "instructorName": "Ji-hyun Kim",
+      "numStudents": 22,
+      "availableSeats": 30,
+      "price": "$55"
+    }
+  ]
+}
