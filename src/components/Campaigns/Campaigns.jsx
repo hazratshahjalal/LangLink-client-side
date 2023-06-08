@@ -37,7 +37,7 @@ const Campaigns = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 mt-8 md:grid-cols-2 lg:grid-cols-3 mt-14">
+        <div className="grid grid-cols-1 gap-8 mt-8 md:grid-cols-2 lg:grid-cols-3">
           <a
             data-aos="flip-left"
             data-aos-easing="ease-out-cubic"
