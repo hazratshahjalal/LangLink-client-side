@@ -8,23 +8,23 @@ const Header = () => {
       <nav className="container mx-auto flex items-center justify-between py-4">
         <div className="flex w-20 items-center">
           {/* Website Logo */}
-          <img className=" mr-4" src={logo} alt="Logo" />
-        </div>
+          <Link to='/'>          <img className=" mr-4" src={logo} alt="Logo" />
+          </Link>        </div>
 
         <div className="flex items-center">
           {/* Navbar Items */}
           <ul className="flex space-x-4 font-semibold hover:font-lg ">
             <li>
-              <Link href="/" className="hover:text-gray-400">Home</Link>
+              <Link to='/' className="hover:text-gray-400">Home</Link>
             </li>
             <li>
-              <a href="#" className="hover:text-gray-400">About</a>
+              <Link to='/classes' className="hover:text-gray-400">Classes</Link>
             </li>
             <li>
-              <a href="#" className="hover:text-gray-400">Services</a>
+              <Link to='/instructors' className="hover:text-gray-400">Instructors</Link>
             </li>
             <li>
-              <a href="#" className="hover:text-gray-400">Contact</a>
+              <Link to='/contact' className="hover:text-gray-400">Contact</Link>
             </li>
           </ul>
 
