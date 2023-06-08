@@ -171,7 +171,7 @@ const Registration = () => {
           <p>
             <small>
               Already a member of LangLink?{' '}
-              <Link className="text-primary" to="/login">
+              <Link className="text-blue-600" to="/login">
                 Log In
               </Link>
             </small>
