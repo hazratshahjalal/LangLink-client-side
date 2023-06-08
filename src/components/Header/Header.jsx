@@ -50,7 +50,7 @@ const Header = () => {
                 <label className="btn btn-ghost btn-circle avatar">
                   <div className="w-10 rounded-full">
                     {user.photoURL ? (
-                      <img title={user.displayName || ''} src={user.photoURL} alt="User Avatar" />
+                      <img title={user.displayName || ''} src={user.photoURL} alt="Avatar" />
                     ) : (
                       <div className='bg-gray-200 p-4 text-center rounded-full' >Avatar</div>
                     )}
