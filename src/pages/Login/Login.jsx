@@ -1,15 +1,28 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import SocialLogin from '../shared/socialLogin/SocialLogin';
+import loginImage from '../../../src/assets/loginpage.jpg'
+import { AuthContext } from '../../Providers/AuthProvider';
 
 const Login = () => {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, getValues } = useForm();
+
   const [showPassword, setShowPassword] = useState(false);
 
   const onSubmit = (data) => {
     console.log(data);
   };
+
+
+  const { signInUser } = useContext(AuthContext);
+
+  const handleLogin = event => {
+    const form = event.target;
+    const email = getValues('email');
+    const password = getValues('password');
+    console.log(email, password);
+  }
 
   const togglePasswordVisibility = () => {
     setShowPassword((prevShowPassword) => !prevShowPassword);
@@ -25,10 +38,9 @@ const Login = () => {
       <div
         data-aos="zoom-in"
         data-aos-duration="500"
-        className="hidden bg-cover rounded-lg lg:block lg:w-1/2"
+        className="hidden bg-cover bg-center rounded-lg lg:block lg:w-1/2"
         style={{
-          backgroundImage:
-            'url("https://images.unsplash.com/photo-1653708075361-512e506e69fd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80")',
+          backgroundImage: `url(${loginImage})`,
         }}
       ></div>
       <div className="w-full px-6 py-8 md:px-8 lg:w-1/2">
@@ -55,13 +67,14 @@ const Login = () => {
           <span className="w-1/5 border-b dark:border-gray-400 lg:w-1/4"></span>
         </div>
 
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(handleLogin)}>
           <div className="mt-4">
             <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-400">
               Email:
             </label>
             <input
               id="email"
+
               type="email"
               className="mt-1 border border-lime-800 p-3 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm rounded-md"
               {...register('email', { required: true })}
@@ -74,6 +87,7 @@ const Login = () => {
             </label>
             <input
               id="password"
+
               type={showPassword ? 'text' : 'password'}
               className="mt-1 border border-lime-800 p-3 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm rounded-md"
               {...register('password', { required: true })}
@@ -148,7 +162,7 @@ const Login = () => {
       </div>
 
 
-    </div>
+    </div >
   );
 };
 

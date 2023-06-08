@@ -1,11 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import SocialLogin from '../shared/socialLogin/SocialLogin';
+import registerImage from '../../../src/assets/registern.jpg'
+import { AuthContext } from '../../Providers/AuthProvider';
 
 const Registration = () => {
   const { register, handleSubmit, getValues, formState: { errors } } = useForm();
-  const onSubmit = (data) => console.log(data);
+
+  const { createNewUser } = useContext(AuthContext);
+
+  const onSubmit = (data) => {
+    console.log(data);
+    createNewUser(data.email, data.password)
+      .then(result => {
+        const loggedUser = result.user;
+        console.log(loggedUser)
+      })
+  };
+
 
   return (
     <div
@@ -31,7 +44,7 @@ const Registration = () => {
             href="f"
             className="text-xs text-center text-gray-500 uppercase dark:text-gray-400 hover:underline"
           >
-            or login with email
+            or sign up with email
           </a>
 
           <span className="w-1/5 border-b dark:border-gray-400 lg:w-1/4"></span>
@@ -48,6 +61,11 @@ const Registration = () => {
               className="mt-1 border border-lime-800 p-3 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm rounded-md"
               {...register('name', { required: true })}
             />
+            {errors.name && (
+              <p className="text-red-500 text-sm mt-1">
+                Name is required
+              </p>
+            )}
           </div>
 
           <div className="mt-4">
@@ -60,6 +78,11 @@ const Registration = () => {
               className="mt-1 border border-lime-800 p-3 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm rounded-md"
               {...register('email', { required: true })}
             />
+            {errors.email && (
+              <p className="text-red-500 text-sm mt-1">
+                Email is required
+              </p>
+            )}
           </div>
 
           <div className="mt-4">
@@ -183,10 +206,10 @@ const Registration = () => {
       <div
         data-aos="zoom-in"
         data-aos-duration="500"
-        className="hidden bg-cover rounded-lg lg:block lg:w-1/2"
+        className="hidden bg-cover bg-center rounded-lg lg:block lg:w-1/2"
         style={{
-          backgroundImage:
-            'url("https://images.unsplash.com/photo-1606660265514-358ebbadc80d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1575&q=80")',
+          backgroundImage: `url(${registerImage})`,
+
         }}
       ></div>
     </div>
