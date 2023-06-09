@@ -196,7 +196,7 @@ const Registration = () => {
           <div className="mt-4">
             <button
               type="submit"
-              className="w-full px-4 py-2 text-base font-semibold  transition-colors duration-200 bg-blue-500 hover:bg-blue-600 text-white  rounded sm:px-6"
+              className="w-full px-4 py-2 btn btn-primary"
             >
               Sign Up
             </button>
@@ -208,7 +208,7 @@ const Registration = () => {
             <small>
               Already a member of LangLink?{' '}
               <Link className="text-blue-600" to="/login">
-                Log In
+                Sign In
               </Link>
             </small>
           </p>
