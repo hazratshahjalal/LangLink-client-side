@@ -3,7 +3,7 @@ import React from 'react';
 const Instructor = () => {
   return (
     <div>
-      Instructors
+      Instructor
     </div>
   );
 };

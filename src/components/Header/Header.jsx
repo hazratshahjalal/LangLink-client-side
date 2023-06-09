@@ -1,15 +1,31 @@
 import React, { useContext } from 'react';
 import logo from '../../../src/assets/LangLogo.png'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
+
+import Swal from 'sweetalert2'
+
+
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
 
+  const navigate = useNavigate();
+
+
   const handleLogOut = () => {
     logOut()
       .then(() => {
-
+        Swal.fire({
+          title: 'You are logged out',
+          showClass: {
+            popup: 'animate__animated animate__fadeInDown'
+          },
+          hideClass: {
+            popup: 'animate__animated animate__fadeOutUp'
+          }
+        });
+        navigate(from, { replace: true });
       })
       .catch(error => console.log(error))
   }

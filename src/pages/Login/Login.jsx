@@ -28,10 +28,6 @@ const Login = () => {
 
   const [showPassword, setShowPassword] = useState(false);
 
-  const onSubmit = (data) => {
-    console.log(data);
-  };
-
 
   const [passError, setPassError] = useState('');
   const navigate = useNavigate();
