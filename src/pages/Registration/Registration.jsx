@@ -196,7 +196,7 @@ const Registration = () => {
           <div className="mt-4">
             <button
               type="submit"
-              className="w-full px-4 py-2 text-base font-semibold text-white transition-colors duration-200 bg-blue-600 rounded-md shadow hover:bg-blue-700 focus:outline-none focus:ring-blue-500 focus:ring-offset-blue-200 focus:ring-2 sm:px-6"
+              className="w-full px-4 py-2 text-base font-semibold  transition-colors duration-200 bg-blue-500 hover:bg-blue-600 text-white  rounded sm:px-6"
             >
               Sign Up
             </button>
