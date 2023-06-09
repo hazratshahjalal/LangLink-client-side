@@ -22,9 +22,9 @@ const Instructor = () => {
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         {homeInstructors.map((instructor) => (
           <div key={instructor.id} className="card bg-gray-200 shadow-lg">
-            <figure>
-              <img className="w-full" src={instructor.image} alt="instructors" />
-            </figure>
+
+            <img className="w-full" src={instructor.image} alt="instructors" />
+
             <div className="card-body p-4">
               <h2 className="text-emerald-700 font-semibold text-4xl">{instructor.name}</h2>
               <p>{instructor.email}</p>

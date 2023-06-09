@@ -19,7 +19,7 @@ const AllClasses = () => {
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
         {allClasses.map((classItem) => (
           <div key={classItem.name} className="bg-gray-100 rounded-md shadow-lg overflow-hidden">
-            <img className="w-full" src={`images/${classItem.image}`} alt={classItem.name} />
+            <img className="w-full" src={classItem.image} alt={classItem.name} />
             <div className="p-4">
               <h2 className="text-2xl font-semibold text-emerald-700 mb-2">{classItem.name}</h2>
               <p className="text-gray-700 mb-2">Instructor: {classItem.instructorName}</p>

@@ -1,6 +1,6 @@
 [
   {
-    "image": "class1.jpg",
+    "image": "https://www.linkpicture.com/q/spanish.jpg",
     "name": "Spanish",
     "instructorName": "Maria Rodriguez",
     "numStudents": 15,
@@ -8,15 +8,15 @@
     "price": "$50"
   },
   {
-    "image": "class2.jpg",
+    "image": "https://www.linkpicture.com/q/french_1.jpg",
     "name": "French",
-    "instructorName": "Jean-Luc Leblanc",
+    "instructorName": "Emily Johnson",
     "numStudents": 10,
     "availableSeats": 20,
     "price": "$45"
   },
   {
-    "image": "class3.jpg",
+    "image": "https://www.linkpicture.com/q/german.jpg",
     "name": "German",
     "instructorName": "Hans Schmidt",
     "numStudents": 8,
@@ -24,15 +24,7 @@
     "price": "$55"
   },
   {
-    "image": "class4.jpg",
-    "name": "Italian",
-    "instructorName": "Giuseppe Rossi",
-    "numStudents": 12,
-    "availableSeats": 18,
-    "price": "$40"
-  },
-  {
-    "image": "class5.jpg",
+    "image": "https://www.linkpicture.com/q/japanese.jpg",
     "name": "Japanese",
     "instructorName": "Akiko Tanaka",
     "numStudents": 20,
@@ -40,7 +32,7 @@
     "price": "$60"
   },
   {
-    "image": "class6.jpg",
+    "image": "https://www.linkpicture.com/q/chinese.jpg",
     "name": "Chinese",
     "instructorName": "Li Wei",
     "numStudents": 16,
@@ -48,15 +40,7 @@
     "price": "$50"
   },
   {
-    "image": "class7.jpg",
-    "name": "Russian",
-    "instructorName": "Ivan Petrov",
-    "numStudents": 14,
-    "availableSeats": 25,
-    "price": "$55"
-  },
-  {
-    "image": "class8.jpg",
+    "image": "https://www.linkpicture.com/q/arabic.png",
     "name": "Arabic",
     "instructorName": "Ahmed Mahmoud",
     "numStudents": 18,
@@ -64,15 +48,15 @@
     "price": "$45"
   },
   {
-    "image": "class9.jpg",
+    "image": "https://www.linkpicture.com/q/portu.jpg",
     "name": "Portuguese",
-    "instructorName": "Carlos Silva",
+    "instructorName": "Olivia Thompson",
     "numStudents": 10,
     "availableSeats": 15,
     "price": "$40"
   },
   {
-    "image": "class10.jpg",
+    "image": "https://www.linkpicture.com/q/korean.jpg",
     "name": "Korean",
     "instructorName": "Ji-hyun Kim",
     "numStudents": 22,
