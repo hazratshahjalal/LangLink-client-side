@@ -5,7 +5,7 @@ const Instructor = () => {
   const [homeInstructors, setHomeInstructors] = useState([]);
 
   useEffect(() => {
-    fetch("/instructors.json")
+    fetch(`https://lang-link-server-side.vercel.app/instructors`)
       .then((res) => res.json())
       .then((data) => {
         const sortedInstructors = data.sort((a, b) => b.classes[0].numStudents - a.classes[0].numStudents);

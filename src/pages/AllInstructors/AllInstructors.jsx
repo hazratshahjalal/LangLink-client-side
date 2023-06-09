@@ -5,7 +5,7 @@ const AllInstructors = () => {
   const [allInstructors, setAllInstructors] = useState([]);
 
   useEffect(() => {
-    fetch("/instructors.json")
+    fetch(`https://lang-link-server-side.vercel.app/instructors`)
       .then((res) => res.json())
       .then((data) => {
         setAllInstructors(data);
@@ -34,7 +34,7 @@ const AllInstructors = () => {
               </ul>
               </p>
               <div className="card-actions justify-center mt-4">
-                <Link to='/instructor/:id'>                <button className="btn btn-primary">See Classes</button>
+                <Link to='/instructor/:id'><button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4  rounded">See Classes</button>
                 </Link>              </div>
             </div>
           </div>

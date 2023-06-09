@@ -4,7 +4,7 @@ const Class = () => {
   const [topClasses, setTopClasses] = useState([]);
 
   useEffect(() => {
-    fetch("/classes.json")
+    fetch(`https://lang-link-server-side.vercel.app/classes`)
       .then((res) => res.json())
       .then((data) => {
         const sortedClasses = data.sort((a, b) => b.numStudents - a.numStudents);
