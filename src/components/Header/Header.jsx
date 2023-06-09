@@ -85,10 +85,10 @@ const Header = () => {
                   <Link to='/' className="hover:text-gray-400">Home</Link>
                 </li>
                 <li>
-                  <Link to='/classes' className="hover:text-gray-400">Classes</Link>
+                  <Link to='/allClasses' className="hover:text-gray-400">Classes</Link>
                 </li>
                 <li>
-                  <Link to='/instructors' className="hover:text-gray-400">Instructors</Link>
+                  <Link to='/allInstructors' className="hover:text-gray-400">Instructors</Link>
                 </li>
 
               </ul>
