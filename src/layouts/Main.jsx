@@ -14,6 +14,8 @@ const Main = () => {
     { path: '/login', label: 'Login' },
     { path: '/registration', label: 'Registration' },
     { path: '/contact', label: 'Contact' },
+    { path: '/allInstructors', label: 'Instructors' },
+    { path: '/allClasses', label: 'Classes' }
   ];
 
   // Check if the current route is the 404 route
