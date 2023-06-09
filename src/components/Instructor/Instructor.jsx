@@ -16,7 +16,7 @@ const Instructor = () => {
   }, []);
 
   return (
-    <div className='container text-center mx-auto'>
+    <div className='container my-6 text-center mx-auto'>
       <h1 className="text-5xl text-center text-gray-950 font-bold mb-4">Popular Instructors</h1>
       <p className="text-base text-center text-gray-600 mb-8">Discover our top instructors with the most students enrolled in their classes.</p>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">

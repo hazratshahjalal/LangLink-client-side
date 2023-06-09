@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const AllInstructors = () => {
+  const { _id } = useParams();
   const [allInstructors, setAllInstructors] = useState([]);
 
   useEffect(() => {
@@ -14,7 +15,7 @@ const AllInstructors = () => {
   }, []);
 
   return (
-    <div className="container mx-auto">
+    <div className="container my-12 mx-auto">
       <h1 className="text-5xl text-center text-gray-950 font-bold mb-4">All Instructors</h1>
       <p className="text-base text-center text-gray-600 mb-8">Explore all our talented instructors.</p>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
@@ -34,7 +35,7 @@ const AllInstructors = () => {
               </ul>
               </p>
               <div className="card-actions justify-center mt-4">
-                <Link to='/instructor/:id'><button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4  rounded">See Classes</button>
+                <Link to={`/instructor/${instructor._id}`}><button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4  rounded">See Classes</button>
                 </Link>              </div>
             </div>
           </div>
