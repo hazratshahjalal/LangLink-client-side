@@ -5,8 +5,8 @@
 - Get in touch with different language instructors
 - Browse popular classes from renowned instructors
 - Book language classes by creating an account
-- Become an instructor and share your expertise (Request approval from admin)
-- Access a comprehensive learning dashboard to track your progress
+- Become an instructor and share your expertise and classes (Request approval from admin)
+- Access a comprehensive learning Dashboard to track your progress
 - Explore a diverse range of language classes offered by our instructors
 
 ## Used Packages/Technology
