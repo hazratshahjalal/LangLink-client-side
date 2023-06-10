@@ -16,33 +16,26 @@ const SocialLogin = () => {
 
     googleSignIn()
       .then(result => {
-        const user = result.user;
-        console.log(user);
-        const saveUser = { name: user.displayName, email: user.email }
-        // fetch('http://localhost:5600/users', {
-        //   method: 'POST',
-        //   headers: {
-        //     'content-type': 'application/json'
-        //   },
-        //   body: JSON.stringify(saveUser)
-        // })
-        //   .then(res => res.json())
-        //   .then(() => {
-        //     {
-
-        //     }
-        //   })
-
-        Swal.fire({
-          title: 'Login Successful',
-          showClass: {
-            popup: 'animate__animated animate__fadeInDown'
+        const loggedInUser = result.user;
+        console.log(loggedInUser);
+        const saveUser = { name: loggedInUser.displayName, email: loggedInUser.email }
+        console.log(saveUser)
+        fetch('https://lang-link-server-side.vercel.app/users', {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json'
           },
-          hideClass: {
-            popup: 'animate__animated animate__fadeOutUp'
-          }
-        });
-        navigate(from, { replace: true });
+          body: JSON.stringify(saveUser)
+        })
+          .then(res => res.json())
+          .then(data => {
+            if (data.insertedId) {
+
+              navigate(from, { replace: true });
+            }
+          })
+
+
       })
       .catch(error => {
         console.error(error)

@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { app } from "../firebase/firebase.config";
+import axios from 'axios';
 
 export const AuthContext = createContext(null);
 
@@ -22,6 +23,13 @@ const AuthProvider = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password)
   }
 
+  const updateUserProfile = (name, image) => {
+    return updateProfile(auth.currentUser, {
+      displayName: name, photoURL: image
+    })
+
+  }
+
   const logOut = () => {
     setLoading(true);
     return signOut(auth);
@@ -38,8 +46,19 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, currentUser => {
       setUser(currentUser);
-      console.log(currentUser)
-      setLoading(false)
+      // get set token
+      if (currentUser) {
+        axios.post('https://lang-link-server-side.vercel.app/jwt', { email: currentUser.email })
+          .then(data => {
+            localStorage.setItem('access-token', data.data.token)
+            setLoading(false);
+          })
+      }
+      else {
+        localStorage.removeItem('access-token')
+      }
+
+
     });
     return () => {
       return unsubscribe()
@@ -52,6 +71,7 @@ const AuthProvider = ({ children }) => {
     createNewUser,
     signIn,
     googleSignIn,
+    updateUserProfile,
     logOut,
 
   }

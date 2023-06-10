@@ -7,6 +7,13 @@ import Registration from "../pages/Registration/Registration";
 import AllInstructors from "../pages/AllInstructors/AllInstructors";
 import AllClasses from "../pages/AllClasses/AllClasses";
 import InstructorClasses from "../pages/InstructorClasses/InstructorClasses";
+import Dashboard from "../layouts/Dashboard";
+import ManageClasses from "../pages/Dashboard/ManageClasses";
+import ManageUsers from "../pages/Dashboard/ManageUsers";
+import ManageInstructors from "../pages/Dashboard/ManageInstructors";
+import ManageAll from "../pages/Dashboard/ManageAll";
+import PrivateRoutes from "./PrivateRoutes";
+import AccessDashboard from "../components/AccessDashboard/AccessDashboard";
 
 
 const router = createBrowserRouter([
@@ -45,6 +52,32 @@ const router = createBrowserRouter([
 
     ]
   },
+  {
+    path: 'dashboard',
+    element: <PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>,
+    children: [
+      {
+        path: '',
+        element: <AccessDashboard></AccessDashboard>
+      },
+      {
+        path: 'manageUsers',
+        element: <ManageAll></ManageAll>
+      },
+      {
+        path: 'manageClasses',
+        element: <ManageClasses></ManageClasses>
+      },
+      {
+        path: 'manageUsers',
+        element: <ManageUsers></ManageUsers>
+      },
+      {
+        path: 'manageInstructors',
+        element: <ManageInstructors></ManageInstructors>
+      }
+    ]
+  }
 ]);
 
 export default router;

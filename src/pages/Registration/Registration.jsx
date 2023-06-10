@@ -8,28 +8,58 @@ import Swal from 'sweetalert2'
 
 
 const Registration = () => {
-  const { register, handleSubmit, getValues, formState: { errors } } = useForm();
+  const { register, handleSubmit, getValues, reset, formState: { errors } } = useForm();
   const navigate = useNavigate();
+  const { createNewUser, updateUserProfile } = useContext(AuthContext);
 
-  const { createNewUser } = useContext(AuthContext);
+  const onSubmit = async (data) => {
+    try {
+      console.log(data);
+      const result = await createNewUser(data.email, data.password);
+      const loggedUser = result.user;
 
-  const onSubmit = (data) => {
-    console.log(data);
-    createNewUser(data.email, data.password)
-      .then(result => {
-        const loggedUser = result.user;
-        console.log(loggedUser)
+      await updateUserProfile(data.name, data.photoUrl);
+
+      const saveUser = { name: data.name, email: data.email, role: 'user' };
+      const response = await fetch('https://lang-link-server-side.vercel.app/users', {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json'
+        },
+        body: JSON.stringify(saveUser)
       });
-    Swal.fire({
-      title: 'Registration Complete',
-      showClass: {
-        popup: 'animate__animated animate__fadeInDown'
-      },
-      hideClass: {
-        popup: 'animate__animated animate__fadeOutUp'
+      const responseData = await response.json();
+
+      if (responseData.insertedId) {
+        reset();
+        Swal.fire({
+          title: 'Registration Complete',
+          showClass: {
+            popup: 'animate__animated animate__fadeInDown'
+          },
+          hideClass: {
+            popup: 'animate__animated animate__fadeOutUp'
+          }
+        })
+          .then(() => {
+            navigate('/');
+          });
       }
-    });
-    navigate('/')
+    } catch (error) {
+      console.error(error);
+      // Display an error message to the user
+      Swal.fire({
+        title: 'Registration Failed',
+        text: 'An error occurred during registration. Please try again later.',
+        icon: 'error',
+        showClass: {
+          popup: 'animate__animated animate__fadeInDown'
+        },
+        hideClass: {
+          popup: 'animate__animated animate__fadeOutUp'
+        }
+      });
+    }
   };
 
 
