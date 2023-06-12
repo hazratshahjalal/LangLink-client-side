@@ -20,23 +20,23 @@ const TopSlider = () => {
       >
         <div className="relative">
           <img src={image1} alt="Slider Image 1" className="w-full h-auto opacity-60" />
-          <div className="absolute top-1/2 left-1/2 transform w-1/2 -translate-x-1/2 -translate-y-1/2 text-center bg-black bg-opacity-20">
-            <h2 className="text-2xl  text-gray-800 lg:text-4xl font-bold">Welcome to our Summer Language School!</h2>
-            <p className="text-lg p-4 text-black lg:text-xl">In this summer, Learn new languages and explore different cultures.</p>
+          <div className="absolute top-1/2 left-1/2 transform w-1/2 -translate-x-1/2 -translate-y-1/2 text-center bg-black rounded-lg bg-opacity-50">
+            <h2 className="text-2xl  text-white lg:text-4xl font-bold">Welcome to our Summer Language School!</h2>
+            <p className="text-lg p-4 text-gray-200 lg:text-xl">In this summer, Learn new languages and explore different cultures.</p>
           </div>
         </div>
         <div className="relative">
           <img src={image2} alt="Slider Image 2" className="w-full h-auto opacity-80" />
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center bg-black bg-opacity-20">
-            <h2 className="text-3xl  text-emerald-600 lg:text-6xl font-bold">Expand Your Language Skills</h2>
-            <p className="text-lg p-4  text-black lg:text-xl">Join our language courses this summer and enhance your communication abilities.</p>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center bg-black bg-opacity-50 rounded-lg">
+            <h2 className="text-3xl  text-emerald-400 lg:text-6xl font-bold">Expand Your Language Skills</h2>
+            <p className="text-lg p-4  text-gray-200 lg:text-xl">Join our language courses this summer and enhance your communication abilities.</p>
           </div>
         </div>
         <div className="relative">
           <img src={image3} alt="Slider Image 3" className="w-full h-auto opacity-80" />
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center bg-black bg-opacity-30">
-            <h2 className="text-3xl  lg:text-6xl  text-emerald-600 font-bold">Discover the World Through Language</h2>
-            <p className="text-lg p-4 text-black lg:text-xl">Immerse yourself in new languages and broaden your horizons.</p>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center bg-black bg-opacity-50 rounded-lg">
+            <h2 className="text-3xl  lg:text-6xl  text-emerald-300 font-bold">Discover the World Through Language</h2>
+            <p className="text-lg p-4 text-gray-200 lg:text-xl">Immerse yourself in new languages and broaden your horizons.</p>
           </div>
         </div>
       </Carousel>

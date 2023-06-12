@@ -11,7 +11,7 @@ const Dashboard = () => {
   // TODO:
   const { user } = useContext(AuthContext);
   const isAdmin = user && user.role === 'admin';
-  const isStudent = user.role === 'student';
+  const isUser = user.role === 'user';
   const isInstructor = user.role === 'instructor'
 
   return (
@@ -30,61 +30,55 @@ const Dashboard = () => {
         <ul className="menu p-4 w-80 h-full bg-emerald-300 text-base-content">
           {/* Sidebar content here */}
 
-          {isAdmin && (
-            <>
-              <li className='text-lg font-semibold'> <Zoom>
-                <Link to="/">
-                  <FaHome />
-                  Go Back Home
+          {!isAdmin ? <>
+            <li className='text-lg font-semibold'> <Zoom>
+              <Link to="/">
+                <FaHome />
+                Go Back Home
+              </Link>
+            </Zoom></li>
+            <li>
+              <Zoom>
+                <Link to="manageUsers">
+                  <FaUser />
+                  Admin Dashboard
                 </Link>
-              </Zoom></li>
-              <li>
-                <Zoom>
-                  <Link to="manageUsers">
-                    <FaUser />
-                    Admin Dashboard
-                  </Link>
-                </Zoom>
-              </li>
+              </Zoom>
+            </li>
 
-              <li>
-                <Zoom>
-                  <Link to="manageUsers">
-                    <FaUsers />
-                    Manage Users
-                  </Link>
-                </Zoom>
-
-              </li>
-              <li>
-                <Zoom>
-                  <Link to="manageClasses">
-                    <FaCog />
-                    Manage Classes
-                  </Link>
-                </Zoom>
-              </li>
-            </>
-          )}
-          {isStudent && (
-            <>
-              <li className='text-lg font-semibold'> <Zoom>
-                <Link to="/">
-                  <FaHome />
-                  Go Back Home
+            <li>
+              <Zoom>
+                <Link to="manageUsers">
+                  <FaUsers />
+                  Manage Users
                 </Link>
-              </Zoom></li>
-              <li>
-                <Zoom>
-                  <Link to="myClasses">
-                    <FaUser />
-                    User Dashboard
-                  </Link>
-                </Zoom>
-              </li>
-            </>
-          )
-          }
+              </Zoom>
+
+            </li>
+            <li>
+              <Zoom>
+                <Link to="manageClasses">
+                  <FaCog />
+                  Manage Classes
+                </Link>
+              </Zoom>
+            </li>
+          </> : <>
+            <li className='text-lg font-semibold'> <Zoom>
+              <Link to="/">
+                <FaHome />
+                Go Back Home
+              </Link>
+            </Zoom></li>
+            <li>
+              <Zoom>
+                <Link to="myClasses">
+                  <FaUser />
+                  User Dashboard
+                </Link>
+              </Zoom>
+            </li>
+          </>}
         </ul>
 
       </div>
