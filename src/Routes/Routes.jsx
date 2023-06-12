@@ -14,6 +14,7 @@ import ManageInstructors from "../pages/Dashboard/ManageInstructors";
 import ManageAll from "../pages/Dashboard/ManageAll";
 import PrivateRoutes from "./PrivateRoutes";
 import AccessDashboard from "../components/AccessDashboard/AccessDashboard";
+import MyClasses from "../components/MyClassses/MyClasses";
 
 
 const router = createBrowserRouter([
@@ -75,6 +76,10 @@ const router = createBrowserRouter([
       {
         path: 'manageInstructors',
         element: <ManageInstructors></ManageInstructors>
+      },
+      {
+        path: 'myClasses',
+        element: <MyClasses></MyClasses>
       }
     ]
   }

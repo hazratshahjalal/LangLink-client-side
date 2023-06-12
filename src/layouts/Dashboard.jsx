@@ -11,7 +11,7 @@ const Dashboard = () => {
   // TODO:
   const { user } = useContext(AuthContext);
   const isAdmin = user && user.role === 'admin';
-  const isUser = user.role === 'user';
+  const isStudent = user.role === 'student';
   const isInstructor = user.role === 'instructor'
 
   return (
@@ -30,7 +30,7 @@ const Dashboard = () => {
         <ul className="menu p-4 w-80 h-full bg-emerald-300 text-base-content">
           {/* Sidebar content here */}
 
-          {!isAdmin ? <>
+          {isAdmin && (<>
             <li className='text-lg font-semibold'> <Zoom>
               <Link to="/">
                 <FaHome />
@@ -63,7 +63,8 @@ const Dashboard = () => {
                 </Link>
               </Zoom>
             </li>
-          </> : <>
+          </>)}
+          {isStudent && (<>
             <li className='text-lg font-semibold'> <Zoom>
               <Link to="/">
                 <FaHome />
@@ -74,11 +75,12 @@ const Dashboard = () => {
               <Zoom>
                 <Link to="myClasses">
                   <FaUser />
-                  User Dashboard
+                  Student Dashboard
                 </Link>
               </Zoom>
             </li>
-          </>}
+          </>)}
+
         </ul>
 
       </div>

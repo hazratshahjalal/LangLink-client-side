@@ -20,7 +20,7 @@ const Registration = () => {
 
       await updateUserProfile(data.name, data.photoUrl);
 
-      const saveUser = { name: data.name, email: data.email, role: 'user' };
+      const saveUser = { name: data.name, email: data.email, role: 'student' };
       const response = await fetch('https://lang-link-server-side.vercel.app/users', {
         method: 'POST',
         headers: {
