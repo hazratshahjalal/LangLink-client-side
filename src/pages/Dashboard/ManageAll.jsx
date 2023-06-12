@@ -93,7 +93,7 @@ const ManageAll = () => {
                     <div className="flex items-center space-x-3">
                       <div className="avatar">
                         <div className="mask mask-squircle w-12 h-12">
-                          <img src={user.photoURL} alt="User photo" />
+                          <img src={user.photoUrl} alt="User photo" />
                         </div>
                       </div>
                       <div>
